@@ -1,14 +1,14 @@
-
 from abc import ABC, abstractmethod
+from excepciones import DatosInvalidosError
 
 
 class Entidad(ABC):
 
     def __init__(self, identificacion):
-        if not identificacion:
-            raise ValueError("La identificación es obligatoria.")
+        if identificacion is None or not str(identificacion).strip():
+            raise DatosInvalidosError("La identificación es obligatoria.")
 
-        self.__identificacion = str(identificacion)
+        self.__identificacion = str(identificacion).strip()
 
     @property
     def identificacion(self):
