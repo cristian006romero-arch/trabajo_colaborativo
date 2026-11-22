@@ -6,9 +6,8 @@ from servicios import (
     AsesoriaEspecializada
 )
 from gestor import GestorSistema
+# CAMBIO: Se eliminaron DatosInvalidosError y ReservaInvalidaError porque no se usaban directamente aquí
 from excepciones import (
-    DatosInvalidosError,
-    ReservaInvalidaError,
     OperacionNoPermitidaError,
     ServicioNoDisponibleError
 )
@@ -130,7 +129,8 @@ def operacion_9():
     total = reserva.procesar(descuento=0.10)
 
     print("Reserva procesada correctamente.")
-    print(f"Total con descuento e impuestos: ${total}")
+    # CAMBIO: Se formatea el valor con separador de miles y dos decimales (:,.2f)
+    print(f"Total con descuento e impuestos: ${total:,.2f}")
 
 
 def operacion_10():
@@ -175,7 +175,8 @@ def operacion_12():
 
     else:
         print("Cálculo realizado correctamente.")
-        print(f"Costo final: ${resultado}")
+        # CAMBIO: Se formatea el valor con separador de miles y dos decimales (:,.2f)
+        print(f"Costo final: ${resultado:,.2f}")
 
     finally:
         print("Proceso de cálculo finalizado.")
