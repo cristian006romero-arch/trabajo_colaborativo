@@ -80,11 +80,17 @@ class Reserva:
         return self.__total
 
     def describir(self):
+        # CAMBIO: Se muestra el total formateado en moneda o un texto claro en lugar de 'None'
+        total_texto = (
+            f"${self.__total:,.2f}"
+            if self.__total is not None
+            else "Pendiente de cálculo"
+        )
         return (
             f"Reserva #{self.codigo} | "
             f"Cliente: {self.__cliente.nombre} | "
             f"Servicio: {self.__servicio.nombre} | "
             f"Duración: {self.__duracion} | "
             f"Estado: {self.__estado.value} | "
-            f"Total: {self.__total}"
+            f"Total: {total_texto}"
         )
