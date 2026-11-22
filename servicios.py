@@ -10,14 +10,17 @@ from excepciones import (
 class Servicio(ABC):
 
     def __init__(self, codigo, nombre, tarifa):
-        if not codigo or not nombre:
+        # CAMBIO: Se valida que código y nombre no sean cadenas vacías o de solo espacios
+        if not codigo or not str(codigo).strip() or not nombre or not str(nombre).strip():
             raise DatosInvalidosError("Código y nombre son obligatorios.")
 
-        if not isinstance(tarifa, (int, float)) or tarifa <= 0:
-            raise DatosInvalidosError("La tarifa debe ser positiva.")
+        # CAMBIO: Se bloquean valores booleanos (isinstance(True, int) es True en Python) antes de validar tipo numérico
+        if isinstance(tarifa, bool) or not isinstance(tarifa, (int, float)) or tarifa <= 0:
+            raise DatosInvalidosError("La tarifa debe ser un número positivo.")
 
-        self._codigo = codigo
-        self._nombre = nombre
+        # CAMBIO: Se limpian espacios en código y nombre
+        self._codigo = str(codigo).strip()
+        self._nombre = str(nombre).strip()
         self._tarifa = float(tarifa)
         self._disponible = True
 
@@ -42,13 +45,14 @@ class Servicio(ABC):
         if not self.disponible:
             raise ServicioNoDisponibleError("El servicio no está disponible.")
 
-        if cantidad <= 0:
-            raise DatosInvalidosError("La cantidad debe ser positiva.")
+        # CAMBIO: Se centraliza aquí la llamada a validar_parametros() para no repetir calcular_costo() en las clases hijas
+        self.validar_parametros(cantidad)
 
-        if not 0 <= impuesto <= 1:
+        # CAMBIO: Se valida que impuesto y descuento no sean booleanos y sean numéricos dentro del rango [0, 1]
+        if isinstance(impuesto, bool) or not isinstance(impuesto, (int, float)) or not 0 <= impuesto <= 1:
             raise DatosInvalidosError("Impuesto inválido.")
 
-        if not 0 <= descuento <= 1:
+        if isinstance(descuento, bool) or not isinstance(descuento, (int, float)) or not 0 <= descuento <= 1:
             raise DatosInvalidosError("Descuento inválido.")
 
         subtotal = self._tarifa * cantidad
@@ -73,21 +77,22 @@ class ReservaSalas(Servicio):
     def __init__(self, codigo, tarifa, capacidad):
         super().__init__(codigo, "Reserva de salas", tarifa)
 
-        if not isinstance(capacidad, int) or capacidad <= 0:
+        # CAMBIO: Se evita que un valor booleano pase como entero en capacidad
+        if isinstance(capacidad, bool) or not isinstance(capacidad, int) or capacidad <= 0:
             raise DatosInvalidosError("Capacidad inválida.")
 
         self.capacidad = capacidad
 
     def validar_parametros(self, cantidad):
-        if not isinstance(cantidad, int) or cantidad <= 0:
+        # CAMBIO: Se evita que un valor booleano pase como entero en cantidad
+        if isinstance(cantidad, bool) or not isinstance(cantidad, int) or cantidad <= 0:
             raise DatosInvalidosError("Las horas deben ser un entero positivo.")
 
-    def calcular_costo(self, cantidad=1, impuesto=0.19, descuento=0):
-        self.validar_parametros(cantidad)
-        return super().calcular_costo(cantidad, impuesto, descuento)
+    # CAMBIO: Se eliminó el método calcular_costo() duplicado porque ahora la clase padre llama a validar_parametros()
 
     def describir(self):
-        return f"Sala | Capacidad: {self.capacidad} personas | Tarifa por hora: ${self._tarifa}"
+        # CAMBIO: Se formatea la tarifa con separador de miles y dos decimales (:,.2f)
+        return f"Sala | Capacidad: {self.capacidad} personas | Tarifa por hora: ${self._tarifa:,.2f}"
 
 
 class AlquilerEquipos(Servicio):
@@ -95,21 +100,22 @@ class AlquilerEquipos(Servicio):
     def __init__(self, codigo, tarifa, tipo_equipo):
         super().__init__(codigo, "Alquiler de equipos", tarifa)
 
-        if not tipo_equipo:
+        # CAMBIO: Se valida que tipo_equipo sea str y no tenga solo espacios
+        if not isinstance(tipo_equipo, str) or not tipo_equipo.strip():
             raise DatosInvalidosError("Debe especificar el tipo de equipo.")
 
-        self.tipo_equipo = tipo_equipo
+        self.tipo_equipo = tipo_equipo.strip()  # CAMBIO: Se limpia con .strip()
 
     def validar_parametros(self, cantidad):
-        if not isinstance(cantidad, int) or cantidad <= 0:
+        # CAMBIO: Se evita que un valor booleano pase como entero en cantidad
+        if isinstance(cantidad, bool) or not isinstance(cantidad, int) or cantidad <= 0:
             raise DatosInvalidosError("Los días deben ser un entero positivo.")
 
-    def calcular_costo(self, cantidad=1, impuesto=0.19, descuento=0):
-        self.validar_parametros(cantidad)
-        return super().calcular_costo(cantidad, impuesto, descuento)
+    # CAMBIO: Se eliminó el método calcular_costo() duplicado porque ahora la clase padre llama a validar_parametros()
 
     def describir(self):
-        return f"Equipo: {self.tipo_equipo} | Tarifa diaria: ${self._tarifa}"
+        # CAMBIO: Se formatea la tarifa con separador de miles y dos decimales (:,.2f)
+        return f"Equipo: {self.tipo_equipo} | Tarifa diaria: ${self._tarifa:,.2f}"
 
 
 class AsesoriaEspecializada(Servicio):
@@ -117,18 +123,19 @@ class AsesoriaEspecializada(Servicio):
     def __init__(self, codigo, tarifa, especialidad):
         super().__init__(codigo, "Asesoría especializada", tarifa)
 
-        if not especialidad:
+        # CAMBIO: Se valida que especialidad sea str y no tenga solo espacios
+        if not isinstance(especialidad, str) or not especialidad.strip():
             raise DatosInvalidosError("Debe indicar la especialidad.")
 
-        self.especialidad = especialidad
+        self.especialidad = especialidad.strip()  # CAMBIO: Se limpia con .strip()
 
     def validar_parametros(self, cantidad):
-        if not isinstance(cantidad, int) or cantidad <= 0:
-            raise DatosInvalidosError("Las horas de asesoría deben ser positivas.")
+        # CAMBIO: Se evita que un valor booleano pase como entero en cantidad
+        if isinstance(cantidad, bool) or not isinstance(cantidad, int) or cantidad <= 0:
+            raise DatosInvalidosError("Las horas de asesoría deben ser un entero positivo.")
 
-    def calcular_costo(self, cantidad=1, impuesto=0.19, descuento=0):
-        self.validar_parametros(cantidad)
-        return super().calcular_costo(cantidad, impuesto, descuento)
+    # CAMBIO: Se eliminó el método calcular_costo() duplicado porque ahora la clase padre llama a validar_parametros()
 
     def describir(self):
-        return f"Asesoría: {self.especialidad} | Tarifa por hora: ${self._tarifa}"
+        # CAMBIO: Se formatea la tarifa con separador de miles y dos decimales (:,.2f)
+        return f"Asesoría: {self.especialidad} | Tarifa por hora: ${self._tarifa:,.2f}"
