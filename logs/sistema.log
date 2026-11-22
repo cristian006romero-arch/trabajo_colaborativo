@@ -1,0 +1,168 @@
+2026-11-18 08:13:46,208 - INFO - Sistema Software FJ iniciado.
+2026-11-18 08:13:46,208 - INFO - Cliente registrado: Carlos Ramirez
+2026-11-18 08:13:46,209 - INFO - Operación 2 fallida: El correo electrónico no es válido.
+2026-11-18 08:13:46,209 - INFO - Cliente registrado: Laura Gomez
+2026-11-18 08:13:46,209 - INFO - Servicio agregado: Reserva de salas
+2026-11-18 08:13:46,210 - INFO - Servicio agregado: Alquiler de equipos
+2026-11-18 08:13:46,210 - INFO - Servicio agregado: Asesoría especializada
+2026-11-18 08:13:46,210 - INFO - Reserva creada: 1
+2026-11-18 08:13:46,210 - ERROR - Error creando reserva.
+Traceback (most recent call last):
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 71, in crear_reserva
+    cliente = self.buscar_cliente(identificacion)
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 52, in buscar_cliente
+    raise ClienteNoEncontradoError(
+        f"No existe el cliente {identificacion}."
+    )
+excepciones.ClienteNoEncontradoError: No existe el cliente 9999.
+2026-11-18 08:13:46,211 - INFO - Operación 8 fallida: No fue posible crear la reserva.
+2026-11-18 08:13:46,211 - INFO - Intento de confirmar reserva procesada: Solo se pueden confirmar reservas pendientes.
+2026-11-18 08:13:46,212 - INFO - El servicio no está disponible.
+2026-11-18 08:13:46,212 - INFO - Reserva creada: 2
+2026-11-18 08:18:03,457 - INFO - Sistema Software FJ iniciado.
+2026-11-18 08:18:03,457 - INFO - Cliente registrado: Carlos Ramirez
+2026-11-18 08:18:03,457 - INFO - Operación 2 fallida: El correo electrónico no es válido.
+2026-11-18 08:18:03,457 - INFO - Cliente registrado: Laura Gomez
+2026-11-18 08:18:03,458 - INFO - Servicio agregado: Reserva de salas
+2026-11-18 08:18:03,458 - INFO - Servicio agregado: Alquiler de equipos
+2026-11-18 08:18:03,458 - INFO - Servicio agregado: Asesoría especializada
+2026-11-18 08:18:03,458 - INFO - Reserva creada: 1
+2026-11-18 08:18:03,458 - ERROR - Error creando reserva.
+Traceback (most recent call last):
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 71, in crear_reserva
+    cliente = self.buscar_cliente(identificacion)
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 52, in buscar_cliente
+    raise ClienteNoEncontradoError(
+        f"No existe el cliente {identificacion}."
+    )
+excepciones.ClienteNoEncontradoError: No existe el cliente 9999.
+2026-11-18 08:18:03,460 - INFO - Operación 8 fallida: No fue posible crear la reserva.
+2026-11-18 08:18:03,460 - INFO - Intento de confirmar reserva procesada: Solo se pueden confirmar reservas pendientes.
+2026-11-18 08:18:03,460 - INFO - El servicio no está disponible.
+2026-11-18 08:18:03,461 - INFO - Reserva creada: 2
+2026-11-18 08:22:41,198 - INFO - Sistema Software FJ iniciado.
+2026-11-18 08:22:41,198 - INFO - Cliente registrado: Carlos Ramirez
+2026-11-18 08:22:41,199 - INFO - Operación 2 fallida: El correo electrónico no es válido.
+2026-11-18 08:22:41,199 - INFO - Cliente registrado: Laura Gomez
+2026-11-18 08:22:41,199 - INFO - Servicio agregado: Reserva de salas
+2026-11-18 08:22:41,199 - INFO - Servicio agregado: Alquiler de equipos
+2026-11-18 08:22:41,199 - INFO - Servicio agregado: Asesoría especializada
+2026-11-18 08:22:41,200 - INFO - Reserva creada: 1
+2026-11-18 08:22:41,200 - ERROR - Error creando reserva.
+Traceback (most recent call last):
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 71, in crear_reserva
+    cliente = self.buscar_cliente(identificacion)
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 52, in buscar_cliente
+    raise ClienteNoEncontradoError(
+        f"No existe el cliente {identificacion}."
+    )
+excepciones.ClienteNoEncontradoError: No existe el cliente 9999.
+2026-11-18 08:22:41,201 - INFO - Operación 8 fallida: No fue posible crear la reserva.
+2026-11-18 08:22:41,201 - INFO - Intento de confirmar reserva procesada: Solo se pueden confirmar reservas pendientes.
+2026-11-18 08:22:41,201 - INFO - El servicio no está disponible.
+2026-11-18 08:22:41,202 - INFO - Reserva creada: 2
+2026-11-20 13:20:40,714 - INFO - Sistema Software FJ iniciado.
+2026-11-20 13:20:40,716 - INFO - Cliente registrado: Carlos Ramirez
+2026-11-20 13:20:40,717 - INFO - Operación 2 fallida: El correo electrónico no es válido.
+2026-11-20 13:20:40,717 - INFO - Cliente registrado: Laura Gomez
+2026-11-20 13:20:40,717 - INFO - Servicio agregado: Reserva de salas
+2026-11-20 13:20:40,718 - INFO - Servicio agregado: Alquiler de equipos
+2026-11-20 13:20:40,718 - INFO - Servicio agregado: Asesoría especializada
+2026-11-20 13:20:40,719 - INFO - Reserva creada: 1
+2026-11-20 13:20:40,719 - ERROR - Error creando reserva.
+Traceback (most recent call last):
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 71, in crear_reserva
+    cliente = self.buscar_cliente(identificacion)
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 52, in buscar_cliente
+    raise ClienteNoEncontradoError(
+        f"No existe el cliente {identificacion}."
+    )
+excepciones.ClienteNoEncontradoError: No existe el cliente 9999.
+2026-11-20 13:20:40,724 - INFO - Operación 8 fallida: No fue posible crear la reserva.
+2026-11-20 13:20:40,724 - INFO - Intento de confirmar reserva procesada: Solo se pueden confirmar reservas pendientes.
+2026-11-20 13:20:40,724 - INFO - El servicio no está disponible.
+2026-11-20 13:20:40,726 - INFO - Reserva creada: 2
+2026-11-20 13:22:24,323 - INFO - Sistema Software FJ iniciado.
+2026-11-20 13:22:24,324 - INFO - Cliente registrado: Carlos Ramirez
+2026-11-20 13:22:24,324 - INFO - Operación 2 fallida: El correo electrónico no es válido.
+2026-11-20 13:22:24,324 - INFO - Cliente registrado: Laura Gomez
+2026-11-20 13:22:24,325 - INFO - Servicio agregado: Reserva de salas
+2026-11-20 13:22:24,325 - INFO - Servicio agregado: Alquiler de equipos
+2026-11-20 13:22:24,325 - INFO - Servicio agregado: Asesoría especializada
+2026-11-20 13:22:24,325 - INFO - Reserva creada: 1
+2026-11-20 13:22:24,325 - ERROR - Error creando reserva.
+Traceback (most recent call last):
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 71, in crear_reserva
+    cliente = self.buscar_cliente(identificacion)
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 52, in buscar_cliente
+    raise ClienteNoEncontradoError(
+        f"No existe el cliente {identificacion}."
+    )
+excepciones.ClienteNoEncontradoError: No existe el cliente 9999.
+2026-11-20 13:22:24,326 - INFO - Operación 8 fallida: No fue posible crear la reserva.
+2026-11-20 13:22:24,326 - INFO - Intento de confirmar reserva procesada: Solo se pueden confirmar reservas pendientes.
+2026-11-20 13:22:24,327 - INFO - El servicio no está disponible.
+2026-11-20 13:22:24,327 - INFO - Reserva creada: 2
+2026-11-21 23:09:01,826 - INFO - Sistema Software FJ iniciado.
+2026-11-21 23:09:01,827 - INFO - Cliente registrado: Carlos Ramirez
+2026-11-21 23:09:01,827 - INFO - Operación 2 fallida: El correo electrónico no es válido.
+2026-11-21 23:09:01,828 - INFO - Cliente registrado: Laura Gomez
+2026-11-21 23:09:01,828 - INFO - Servicio agregado: Reserva de salas
+2026-11-21 23:09:01,829 - INFO - Servicio agregado: Alquiler de equipos
+2026-11-21 23:09:01,829 - INFO - Servicio agregado: Asesoría especializada
+2026-11-21 23:09:01,829 - INFO - Reserva creada: 1
+2026-11-21 23:09:01,830 - ERROR - Error creando reserva.
+Traceback (most recent call last):
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 71, in crear_reserva
+    cliente = self.buscar_cliente(identificacion)
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 52, in buscar_cliente
+    raise ClienteNoEncontradoError(
+        f"No existe el cliente {identificacion}."
+    )
+excepciones.ClienteNoEncontradoError: No existe el cliente 9999.
+2026-11-21 23:09:01,831 - INFO - Operación 8 fallida: No fue posible crear la reserva.
+2026-11-21 23:09:01,831 - INFO - Intento de confirmar reserva procesada: Solo se pueden confirmar reservas pendientes.
+2026-11-21 23:09:01,831 - INFO - El servicio no está disponible.
+2026-11-21 23:09:01,831 - INFO - Reserva creada: 2
+2026-11-21 23:26:57,612 - INFO - Sistema Software FJ iniciado.
+2026-11-21 23:26:57,612 - INFO - Cliente registrado: Carlos Ramirez
+2026-11-21 23:26:57,612 - INFO - Operación 2 fallida: El correo electrónico no es válido.
+2026-11-21 23:26:57,613 - INFO - Cliente registrado: Laura Gomez
+2026-11-21 23:26:57,613 - INFO - Servicio agregado: Reserva de salas
+2026-11-21 23:26:57,613 - INFO - Servicio agregado: Alquiler de equipos
+2026-11-21 23:26:57,613 - INFO - Servicio agregado: Asesoría especializada
+2026-11-21 23:26:57,613 - INFO - Reserva creada: 1
+2026-11-21 23:26:57,613 - ERROR - Error creando reserva.
+Traceback (most recent call last):
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 71, in crear_reserva
+    cliente = self.buscar_cliente(identificacion)
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 52, in buscar_cliente
+    raise ClienteNoEncontradoError(
+        f"No existe el cliente {identificacion}."
+    )
+excepciones.ClienteNoEncontradoError: No existe el cliente 9999.
+2026-11-21 23:26:57,614 - INFO - Operación 8 fallida: No fue posible crear la reserva.
+2026-11-21 23:26:57,614 - INFO - Intento de confirmar reserva procesada: Solo se pueden confirmar reservas pendientes.
+2026-11-21 23:26:57,614 - INFO - El servicio no está disponible.
+2026-11-21 23:26:57,615 - INFO - Reserva creada: 2
+2026-11-21 23:35:50,301 - INFO - Sistema Software FJ iniciado.
+2026-11-21 23:35:50,301 - INFO - Cliente registrado: Carlos Ramirez
+2026-11-21 23:35:50,302 - INFO - Operación 2 fallida: El correo electrónico no es válido.
+2026-11-21 23:35:50,302 - INFO - Cliente registrado: Laura Gomez
+2026-11-21 23:35:50,302 - INFO - Servicio agregado: Reserva de salas
+2026-11-21 23:35:50,302 - INFO - Servicio agregado: Alquiler de equipos
+2026-11-21 23:35:50,303 - INFO - Servicio agregado: Asesoría especializada
+2026-11-21 23:35:50,303 - INFO - Reserva creada: 1
+2026-11-21 23:35:50,303 - ERROR - Error creando reserva.
+Traceback (most recent call last):
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 71, in crear_reserva
+    cliente = self.buscar_cliente(identificacion)
+  File "/workspaces/trabajo_colaborativo/gestor.py", line 52, in buscar_cliente
+    raise ClienteNoEncontradoError(
+        f"No existe el cliente {identificacion}."
+    )
+excepciones.ClienteNoEncontradoError: No existe el cliente 9999.
+2026-11-21 23:35:50,304 - INFO - Operación 8 fallida: No fue posible crear la reserva.
+2026-11-21 23:35:50,304 - INFO - Intento de confirmar reserva procesada: Solo se pueden confirmar reservas pendientes.
+2026-11-21 23:35:50,305 - INFO - El servicio no está disponible.
+2026-11-21 23:35:50,305 - INFO - Reserva creada: 2
