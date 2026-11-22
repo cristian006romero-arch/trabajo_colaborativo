@@ -11,16 +11,18 @@ class Cliente(Entidad):
         if not isinstance(nombre, str) or len(nombre.strip()) < 3:
             raise DatosInvalidosError("El nombre debe tener mínimo 3 caracteres.")
 
+        # CAMBIO: Se verifica explícitamente que correo sea str y se aplica .strip() antes de evaluar la expresión regular
         if not isinstance(correo, str) or not re.match(r"^[\w.+-]+@[\w-]+\.[\w.-]+$", correo.strip()):
             raise DatosInvalidosError("El correo electrónico no es válido.")
 
+        # CAMBIO: Se eliminan espacios en blanco del teléfono antes de validar que tenga mínimo 7 dígitos
         telefono_limpio = str(telefono).strip().replace(" ", "")
         if not telefono_limpio.isdigit() or len(telefono_limpio) < 7:
             raise DatosInvalidosError("El teléfono debe tener mínimo 7 dígitos.")
 
         self.__nombre = nombre.strip()
         self.__correo = correo.strip()
-        self.__telefono = telefono_limpio
+        self.__telefono = telefono_limpio  # CAMBIO: Se guarda el teléfono ya limpio
 
     @property
     def nombre(self):
